@@ -28,9 +28,11 @@
 \newlength{\secondindentlength}
 \newlength{\thirdindentlength}
 
-\setlength{\firstindentlength}{3em}
-\setlength{\secondindentlength}{7.1em}
-\setlength{\thirdindentlength}{12.2em}
+% ย่อหน้าบรรทัดแรก 1.27 ซม. (0.5 นิ้ว) เท่ากันทุกระดับหัวข้อ
+% (เดิม 3em/7.1em/12.2em ของฟอนต์ที่ขยาย 1.4 เท่า ทำให้เนื้อความใต้หัวข้อย่อยเริ่มเกือบกลางหน้า)
+\setlength{\firstindentlength}{1.27cm}
+\setlength{\secondindentlength}{1.27cm}
+\setlength{\thirdindentlength}{1.27cm}
 
 \setlength{\parindent}{\firstindentlength}
 \setlength{\parskip}{0pt}
@@ -117,56 +119,56 @@
 }
 \setlist[enumerate]{label*=\arabic*.}
 
+% รายการ: สัญลักษณ์เริ่มที่ระยะย่อหน้า ข้อความห่างจากสัญลักษณ์เล็กน้อย
+% (leftmargin=! ให้ enumitem คำนวณจาก labelindent + labelwidth + labelsep)
 \setlist[itemize,1]{%
-  leftmargin=*,
   labelindent=\parindent,
-  labelsep=1em,
+  labelwidth=0.7em,
+  labelsep=0.6em,
+  leftmargin=!,
+  align=left,
   listparindent=0pt,
   itemsep=0pt,
   topsep=0.3\baselineskip,
   partopsep=0pt,
 }
-\setlist[itemize,2]{%
-  leftmargin=*,
-  labelindent=0em,
-  labelsep=1em,
+\setlist[itemize,2,3]{%
+  labelindent=0pt,
+  labelwidth=0.7em,
+  labelsep=0.6em,
+  leftmargin=!,
+  align=left,
   listparindent=0pt,
   itemsep=0pt,
-  topsep=0.3\baselineskip,
-  partopsep=0pt,
-}
-\setlist[itemize,3]{%
-  leftmargin=*,
-  labelindent=0em,
-  labelsep=1em,
-  listparindent=0pt,
-  itemsep=0pt,
-  topsep=0.3\baselineskip,
+  topsep=0.2\baselineskip,
   partopsep=0pt,
 }
 
 \setlist[enumerate,1]{%
   label=\thesection.\arabic*.,
-  leftmargin=*,
-  labelwidth=3.5em,
   labelindent=\parindent,
-  labelsep=1em,
+  labelwidth=1.6em,
+  labelsep=0.5em,
+  leftmargin=!,
+  align=left,
   listparindent=0pt,
 }
 \setlist[enumerate,2]{%
   label=\thesection.\arabic{enumi}.\arabic*.,
-  leftmargin=*,
-  labelwidth=4.5em,
-  labelindent=0em,
-  labelsep=1em,
+  labelindent=0pt,
+  labelwidth=1.6em,
+  labelsep=0.5em,
+  leftmargin=!,
+  align=left,
   listparindent=0pt
 }
 \setlist[enumerate,3]{%
   label=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic*.,
-  leftmargin=*,
-  labelwidth=5.5em,
-  labelindent=0em,
-  labelsep=1em,
+  labelindent=0pt,
+  labelwidth=1.6em,
+  labelsep=0.5em,
+  leftmargin=!,
+  align=left,
   listparindent=0pt
 }
 
@@ -643,18 +645,19 @@
   {0.5\baselineskip}
   {0.0\baselineskip}
 
+% หัวข้อย่อยเยื้องทีละ 0.6 ซม.
 \titlespacing{\subsection}
-  {\firstindentlength}
+  {0.6cm}
   {0.5\baselineskip}
   {0.0\baselineskip}
 
 \titlespacing{\subsubsection}
-  {\secondindentlength}
+  {1.2cm}
   {0.5\baselineskip}
   {0.0\baselineskip}
 
 \titlespacing{\paragraph}
-  {\thirdindentlength}
+  {1.8cm}
   {0.5\baselineskip}
   {0.0\baselineskip}
 

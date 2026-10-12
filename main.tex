@@ -28,7 +28,7 @@
 \majorEN{Computer Science}
 
 % อาจารย์ที่ปรึกษา
-\advisorTH{อ.ธนพล ตั้งชูพงศ์}
+\advisorTH{อ.ดร.ธนพล ตั้งชูพงศ์}
 \advisorEN{Lect. Thanapon Tangchoopong, Ph.D.}
 
 % ปีการศึกษา
@@ -44,6 +44,22 @@
 \keywordsTH{วิทยาการข้อมูล, การทำนายผลการแข่งขันฟุตบอล, ลีกฟุตบอลยุโรป, การเรียนรู้ของเครื่อง, อัตราต่อรอง, การทดสอบย้อนหลัง}
 \keywordsEN{Data Science, Football Match Outcome Prediction, European Football Leagues, Machine Learning, Betting Odds, Backtesting}
 
+
+% ตัวเลขในสมการและตารางใช้ฟอนต์เดียวกับเนื้อความ (Sarabun) ส่วนสัญลักษณ์ใช้ Latin Modern Math
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{Sarabun-Regular.ttf}[Path=./theme/fonts/, Scale=1.4, range={up/num, "2E, "2C}]
+% หน้าที่มีแต่รูปหรือตาราง วางชิดบนแทนการจัดกลางหน้า
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+% ชื่อรายการโค้ดเป็นภาษาไทย
+\renewcommand{\lstlistingname}{รายการที่}
+% หัวข้อยาวตัดบรรทัดแบบชิดซ้าย ไม่ยืดช่องไฟระหว่างคำและไม่ตัดคำด้วยยัติภังค์
+\titleformat{\section}{\bfseries\large\upshape\raggedright\hyphenpenalty=10000}{\thesection}{0.45\firstindentlength}{}
+\titleformat{\subsection}{\bfseries\large\upshape\raggedright\hyphenpenalty=10000}{\thesubsection}{0.45\firstindentlength}{}
+\titleformat{\subsubsection}{\bfseries\large\upshape\raggedright\hyphenpenalty=10000}{\thesubsubsection}{0.45\firstindentlength}{}
 
 \begin{document}
 
